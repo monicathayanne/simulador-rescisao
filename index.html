@@ -19,8 +19,29 @@
         /* Estilo para os campos editáveis na tabela */
         .input-editavel { border: 1px dashed #ccc; background: transparent; width: 100%; padding: 2px 5px; font-size: 0.95rem; }
         .input-editavel:focus { border: 1px solid var(--contec-orange); outline: none; background: #fffdfa; }
+        .btn-voltar {
+            color: var(--contec-dark);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 15px;
+            transition: 0.2s;
+        }
+        .btn-voltar:hover {
+            color: var(--contec-orange);
+        }
     </style>
 </head>
+            <!-- Botão Voltar Corrigido -->
+        <a href="https://monicathayanne.github.io/portal-contec/" class="btn-voltar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+            Voltar para o Portal Contec
+        </a>
+        
 <body class="p-3 p-md-5">
 
 <div class="container">
@@ -28,8 +49,9 @@
         <div class="card-header bg-white py-3 text-center">
             <h4 class="mb-0" style="color: var(--contec-dark);">Simulador de Rescisão Automático</h4>
         </div>
+        
         <div class="card-body">
-            
+
             <div class="row g-3 mb-4">
                 <div class="col-md-6">
                     <label class="form-label fw-bold">Nome do Funcionário</label>
