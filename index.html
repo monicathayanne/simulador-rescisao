@@ -198,9 +198,16 @@ function processarCalculo() {
         </tr>`;
     }
 
-    // Cálculos
-    const diasS = d2.getDate();
+    // --- AJUSTE SALDO DE SALÁRIO (MÊS COMERCIAL 30 DIAS) ---
+    let diasS = d2.getDate();
+    const ultimoDiaDoMesAtual = new Date(d2.getFullYear(), d2.getMonth() + 1, 0).getDate();
+
+    if (diasS === 31 || (d2.getMonth() === 1 && diasS === ultimoDiaDoMesAtual)) {
+        diasS = 30;
+    }
+    
     addLinha(`Saldo de Salário (${diasS} dia(s))`, (salario / 30) * diasS);
+    // -------------------------------------------------------
 
     const anoD = d2.getFullYear();
     const ini13 = (d1.getFullYear() === anoD) ? d1 : new Date(anoD, 0, 1);
@@ -212,6 +219,7 @@ function processarCalculo() {
 
     let mTotal = (d2.getFullYear() - d1.getFullYear()) * 12 + (d2.getMonth() - d1.getMonth());
     if (d2.getDate() >= 15) mTotal++;
+    
     let avF = mTotal % 12;
     if (avF > 0) {
         const vF = (salario / 12) * avF;
